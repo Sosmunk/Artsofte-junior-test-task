@@ -1,0 +1,25 @@
+<app-companies-header></app-companies-header>
+<h1>Информация о компании</h1>
+<div class="company">
+    <img class="company__logo" src="{{company.logo}}" alt="logo">
+    <div class="company__text">
+      <h2 class="company__title">{{company.business_name}}</h2>
+      <div class="company__category first">
+        <h3>Вид деятельности:</h3>
+        <p class="company__industry text">{{company.industry}}</p>
+      </div>
+      <div class="company__category">
+        <h3>Слоган:</h3>
+        <p class="company__catch-phrase text">{{company.catch_phrase}}</p>
+      </div>
+      <div class="company__category">
+        <h3>Номер телефона:</h3>
+        <a href="tel:{{company.phone_number}}" class="company__phone-number text">{{company.phone_number}}</a>
+      </div>
+      <div class="company__category">
+        <h3>Адрес:</h3>
+        <address class="company__full-address text">{{company.full_address}}</address>
+      </div>
+    </div>
+  <app-map class="company__map" [coordinates]="{latitude: company.latitude, longitude: company.longitude}"></app-map>
+</div>

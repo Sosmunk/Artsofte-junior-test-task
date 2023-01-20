@@ -1,0 +1,53 @@
+.company{
+  padding: 50px;
+  margin: 0 auto;
+  display: grid;
+  grid-template: "a b"
+                 "c b";
+  max-width: 1000px;
+  border: 1px solid lightgray;
+  flex-direction: column;
+  border-radius: 5px;
+  &__text{
+    grid-area: b;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 480px;
+  }
+  &__logo{
+    padding: 30px;
+    margin-left: 10px;
+    grid-area: a;
+    display: block;
+    margin-bottom: 10px;
+    width: 490px;
+    height: 300px;
+  }
+  &__map{
+    margin-top: 50px;
+    margin-left: 10px;
+    grid-area: c;
+  }
+}
+h1{
+  text-align: center;
+  margin-bottom: 30px;
+}
+h2{
+  margin-left: 40px;
+}
+h3{
+  margin-left: 40px;
+  margin-top: 40px;
+}
+a{
+  display: block;
+}
+.first{
+  margin-top: 10px;
+}
+.text{
+  margin-top: 25px;
+  margin-left: 60px;
+}

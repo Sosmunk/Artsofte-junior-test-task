@@ -1,0 +1,24 @@
+h1{
+  margin: 0 auto;
+}
+.header{
+  margin-bottom: 30px;
+  background-color: #2e62d9;
+  &__nav{
+    height: 40px;
+    font-weight: 600;
+    margin-left: 200px;
+    display: flex;
+    align-items: center;
+    gap: 80px;
+  }
+  &__link{
+    text-decoration: none;
+    color: white;
+    display: block;
+    margin-bottom: 3px;
+  }
+  &__link:last-child{
+    margin-left: 50%
+  }
+}

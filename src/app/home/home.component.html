@@ -1,0 +1,37 @@
+<app-companies-header></app-companies-header>
+
+<div class="companies">
+  <div class="container">
+    <div class="companies__container">
+      <div class="companies__sort">
+        <p>Сортировка по:</p>
+        <div class="companies__sort-parameters">
+          <ul class="companies__sort-parameters-list">
+            <li class="companies__sort-parameters-item">
+              <a href="#" (click)="sortCompanies('business_name')" class="companies__sort-parameters-parameter">Названию</a>
+            </li>
+            <li class="companies__sort-parameters-item">
+              <a href="#" (click)="sortCompanies('industry')" class="companies__sort-parameters-parameter">Виду деятельности</a>
+            </li>
+            <li class="companies__sort-parameters-item">
+              <a href="#" (click)="sortCompanies('type')" class="companies__sort-parameters-parameter">Типу</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <ul class="companies__list">
+<!--        <li class="companies__item" *ngFor = "let company of companies | sortCompanies: sortParam:descending">-->
+        <li class="companies__item" *ngFor = "let company of companies">
+          <app-company [company]="company">
+          </app-company>
+        </li>
+      </ul>
+      <div
+        infinite-scroll
+        [infiniteScrollDistance]="2"
+        [infiniteScrollThrottle]="1000"
+        (scrolled)="onScroll()"
+      ></div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+<app-companies-header></app-companies-header>
+<div class="container">
+  <form class="add-company" [formGroup]="addForm" (ngSubmit)="onSubmit()">
+    <div class="business-name">
+      <input id="business-name" type="text" formControlName="business_name" placeholder="Название">
+      <p class="error-text" *ngIf="addForm.get('business_name')?.hasError('maxlength')">длина строки не должна превышать 15 символов</p>
+      <p class="error-text" *ngIf="addForm.get('business_name')?.hasError('required') && addForm.get('business_name')?.touched">название не должно быть пустым</p>
+    </div>
+
+    <div class="industries">
+      <select id="industries" formControlName="industry">
+        <option [ngValue]="null">-- Выберите вид деятельности --</option>
+        <option *ngFor="let industry of industries">
+          {{industry}}
+        </option>
+      </select>
+    </div>
+
+    <div class="in-russia">
+      <label class="checkbox-label" for="in-russia">Присутствие на российском рынке:</label>
+        <input id="in-russia" type="checkbox" formControlName="in_Russia">
+    </div>
+    <div class="submit">
+      <button type="submit" [disabled]="!addForm.valid">Добавить компанию</button>
+    </div>
+  </form>
+</div>
+
